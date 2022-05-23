@@ -20,9 +20,7 @@ def index(request):
         uf = UserForm(request.POST,request.FILES)
         if uf.is_valid():
             # print(request.FILES)
-            #获取表单信息request.FILES是个字典
             User = user(headImg=request.FILES['file'])
-            #保存在服务器
             User.save()
 
             file_path=request.FILES['file']
